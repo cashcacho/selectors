@@ -12,8 +12,15 @@
                 background-color:yellow;
             }
 
-            div#id-div{
+            li.my-list#id-div{
                 background-color:orange;
+            }
+
+            div#new-div, li.new-list{
+                background-color: blue;
+            }
+            ul.my-kids > li{
+                background-color:green;
             }
         </style>
     </head>
@@ -27,6 +34,7 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#compound">child</a></li>
             </ul>
         </nav> 
     </header>           
@@ -47,6 +55,7 @@
             <div id="id-div">Inside my-div</div>
         </fieldset>
 
+
               <fieldset>
             <legend><a id="class">class</a></legend>
             <p>classes can be applied to several items on a page</p>
@@ -54,10 +63,9 @@
             <pre><code>class="my-list"</code></pre>
             <p>Here's how the CSS is applied to the element:</p>
             <pre><code>li.my-list{
+                background-color:orange;
             }
-    background-color:orange;
 }</code></pre>
-
 
             <p>Here's what it looks like:</p>
             <div>
@@ -69,6 +77,41 @@
             </div>
         </fieldset>
 
+        <fieldset>
+            <legend><a id="compund">compound</a></legend>
+            <p>Compund selectors allow us to use more that one selector for a set of rules. The selectors must be seperated by commas</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>li.my-list{div#new-div, li.new-list{
+                background-color:blue;
+}</code></pre>
+            <p>Here's what it looks like:</p>
+            <div>id="new-div</div>
+            <div>
+              <ul>
+                <li class="new-list">I'm inside a li with a class of new-list</li>
+                <li class="new-list">I'm inside a li with a class of new-list</li>
+                <li class="new-list">I'm inside a li with a class of new-list</li>
+              </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="child">compound</a></legend>
+            <p>The child selector allows us to access the elements that are immediately inside the current element.</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>ul.my-kids > li.new-list{
+                background-color:green;
+}</code></pre>
+            <p>Here's what it looks like:</p>
+            <div>id="new-div</div>
+            <div>
+              <ul class="my-kids">
+                <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
+                <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
+                <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
+              </ul>
+            </div>
+        </fieldset>
         <footer class="page-footer">
             <p><small>&copy; 2023 by 
                 NAME HERE, All Rights Reserved ~ 

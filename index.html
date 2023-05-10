@@ -22,12 +22,25 @@
             ul.my-kids > li{
                 background-color:green;
             }
+
+            div.grandkids li{
+                background-color:purple;
+            }
+
+            .add-border{
+                border:1px solid #000;
+            }
+
+            .add-background{
+                background-color:gold
+            }
+
         </style>
     </head>
     <body>
         <header>
             
-            <h1 class="page-header">CSS Selectors by NAME HERE</h1>
+            <h1 class="page-header">CSS Selectors by Justine Cacho</h1>
             
         <nav>
             <ul>
@@ -35,6 +48,8 @@
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
                 <li><a href="#child">child</a></li>
+                <li><a href="#descendant">descendant</a></li>
+                <li><a href="#multiples">multiples</a></li>
             </ul>
         </nav> 
     </header>           
@@ -64,7 +79,6 @@
             <p>Here's how the CSS is applied to the element:</p>
             <pre><code>li.my-list{
                 background-color:orange;
-            }
 }</code></pre>
 
             <p>Here's what it looks like:</p>
@@ -81,7 +95,7 @@
             <legend><a id="compund">compound</a></legend>
             <p>Compund selectors allow us to use more that one selector for a set of rules. The selectors must be seperated by commas</p>
             <p>Here's how the CSS is applied to the element:</p>
-            <pre><code>li.my-list{div#new-div, li.new-list{
+            <pre><code>div#new-div, li.new-list{
                 background-color:blue;
 }</code></pre>
             <p>Here's what it looks like:</p>
@@ -108,6 +122,45 @@
                 <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
                 <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
                 <li class="new-list">I'm inside a li that is a child of a ul with a class of my-kids</li>
+              </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="descendant">descendant</a></legend>
+            <p>The descendant selector allows us to hook an element at any depth inside the current element.</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>ul.my-kids > li.new-list{
+                background-color:purple;
+}</code></pre>
+            <p>Here's what it looks like:</p>
+            <div class="grandkids">
+              <ul >
+                <li class="new-list">I'm inside a li that is a descendant of a div with a class of grandkids</li>
+                <li class="new-list">I'm inside a li that is a descendant of a div with a class of grandkids</li>
+                <li class="new-list">I'm inside a li that is a descendant of a div with a class of grandkids</li>
+              </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="multiple">multipleclasses</a></legend>
+            <p>We can apply multiple classes by placing them in the class attribute with a space between each</p>
+            <p>Here's how we hook multiple calsses to an element:</p>
+            <pre><code>class="add-border add-background"</code></pre>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>.add background{
+    background-color:gold;
+}
+    .add border{
+    border:1px solid #000;
+}</code></pre>
+            <p>Here's what it looks like:</p>
+            <div>
+              <ul>
+                <li class="add-border">I'm inside a li with with 2 classes</li>
+                <li class="add-background">I'm inside a li with with 2 classes</li>
+                <li class="add-border add-background">I'm inside a li with with 2 classes</li>
               </ul>
             </div>
         </fieldset>
